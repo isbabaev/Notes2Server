@@ -4,8 +4,8 @@ export namespace INotepad {
         created: string;
     }
 
-    export interface IAddResponse {
-        id: number
+    export interface IGetAllResponse {
+        id: number;
         name: string;
         created: string;
     }

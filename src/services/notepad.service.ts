@@ -12,13 +12,11 @@ export class NotepadService {
     ) {
     }
 
-    async add(params: INotepad.IAddParams): Promise<INotepad.IAddResponse> {
-        return await this.notepadRepository
-            .insert(params)
-            .then(rows => rows[0])
-            .catch(error => {
-                throw new Error(error);
-            })
+    async add(params: INotepad.IAddParams): Promise<any> {
+        return await this.notepadRepository.insert(params);
     }
 
+    async getAll(): Promise<INotepad.IGetAllResponse[]> {
+        return await this.notepadRepository.find();
+    }
 }

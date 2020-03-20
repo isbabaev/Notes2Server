@@ -9,7 +9,7 @@ export class NotepadController {
     }
 
     @Post('add')
-    async add(@Body() params: NotepadDto.Add): Promise<INotepad.IAddResponse> {
+    async add(@Body() params: NotepadDto.Add): Promise<any> {
         return await this.notepadService.add(params);
     }
 }
