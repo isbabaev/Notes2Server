@@ -16,6 +16,12 @@ export class UserService {
     }
 
     async add(params: IAddParams): Promise<any> {
+        const user = this.getByEmail({email: params.email});
+
+        if(user) { 
+            throw new Error('Пользователь с таким email уже существует');
+        }
+        
         return await this.userRepository.insert(params);
     }
 
