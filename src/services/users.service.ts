@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from 'src/entities/user.entity';
-import { IUser } from 'src/interfaces/user.interface';
-import IAddParams = IUser.IAddParams;
-import IGetByEmailParams = IUser.IGetByEmailParams;
-import IModel = IUser.IModel;
+import { IUsers } from 'src/interfaces/users.interface';
+import IAddParams = IUsers.IAddParams;
+import IGetByEmailParams = IUsers.IGetByEmailParams;
+import IModel = IUsers.IModel;
 
 @Injectable()
-export class UserService {
+export class UsersService {
     constructor(
         @InjectRepository(User)
         private readonly userRepository: Repository<User>
@@ -16,16 +16,17 @@ export class UserService {
     }
 
     async add(params: IAddParams): Promise<any> {
-        const user = this.getByEmail({email: params.email});
+        const user = this.getByEmail({ email: params.email });
 
-        if(user) { 
+        if (user) {
             throw new Error('Пользователь с таким email уже существует');
         }
-        
-        return await this.userRepository.insert(params);
+
+        return await this.userRepository.insert(params)
+            .then(rows => rows[0]);
     }
 
     async getByEmail(params: IGetByEmailParams): Promise<IModel> {
-        return await this.userRepository.findOne({email: params.email});
+        return await this.userRepository.findOne({ email: params.email });
     }
 }

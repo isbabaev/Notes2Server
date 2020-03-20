@@ -1,4 +1,4 @@
-export namespace INotepad {
+export namespace INotepads {
     export interface IAddParams {
         name: string;
         created: string;

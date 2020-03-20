@@ -1,4 +1,4 @@
-export namespace IUser {
+export namespace IUsers {
     export interface IAddParams {
         email: string;
         password: string;
