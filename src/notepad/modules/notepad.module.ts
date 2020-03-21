@@ -1,8 +1,8 @@
-import { NotepadsController } from "src/controllers/notepads.controller";
+import { NotepadsController } from "src/notepad/controllers/notepads.controller";
 import { Module } from '@nestjs/common';
-import { NotepadsService } from "src/services/notepads.service";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { Notepad } from "src/entities/notepad.entity";
+import { Notepad } from "src/notepad/entitites/notepad.entity";
+import { NotepadsService } from "../services/notepads.service";
 
 @Module({
     imports: [TypeOrmModule.forFeature([Notepad])],

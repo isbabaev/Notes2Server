@@ -15,4 +15,9 @@ export namespace IUsers {
         password: string;
         created: string;
     }
+
+    export interface IGetByEmailAndPasswordParams {
+        email: string;
+        password: string;
+    }
 }

@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Get } from "@nestjs/common";
-import { NotepadsService } from "src/services/notepads.service";
-import { NotepadsDto } from "src/dto/notepads.dto";
+import { NotepadsDto } from "src/notepad/dto/notepads.dto";
 import Add = NotepadsDto.Add;
+import { NotepadsService } from "../services/notepads.service";
 
 @Controller('notepads')
 export class NotepadsController {

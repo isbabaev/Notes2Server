@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Notepad } from 'src/entities/notepad.entity';
+import { Notepad } from 'src/notepad/entitites/notepad.entity';
 import { Repository } from 'typeorm';
-import { INotepads } from 'src/interfaces/notepads.interface';
+import { INotepads } from 'src/notepad/interfaces/notepads.interface';
 import IAddParams = INotepads.IAddParams;
 import IGetAllResponse = INotepads.IGetAllResponse;
 

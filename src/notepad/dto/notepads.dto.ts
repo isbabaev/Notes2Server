@@ -1,4 +1,4 @@
-import { INotepads } from "src/interfaces/notepads.interface";
+import { INotepads } from "src/notepad/interfaces/notepads.interface";
 import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 import IAddParams = INotepads.IAddParams;
 

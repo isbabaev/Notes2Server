@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString, IsNumber, IsEmail } from 'class-validator';
-import { IUsers } from 'src/interfaces/users.interface';
+import { IUsers } from 'src/user/interfaces/users.interface';
 import IAddParams = IUsers.IAddParams;
 
 export namespace UsersDto {
