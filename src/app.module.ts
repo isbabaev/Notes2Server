@@ -10,6 +10,6 @@ import { AuthModule } from './auth/modules/auth.module';
     NotepadModule,
     UserModule,
     AuthModule
-  ],
+  ]
 })
 export class AppModule { }

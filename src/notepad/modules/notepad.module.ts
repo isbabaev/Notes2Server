@@ -1,7 +1,7 @@
 import { NotepadsController } from "src/notepad/controllers/notepads.controller";
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { Notepad } from "src/notepad/entitites/notepad.entity";
+import { Notepad } from "src/entities/notepad.entity";
 import { NotepadsService } from "../services/notepads.service";
 
 @Module({

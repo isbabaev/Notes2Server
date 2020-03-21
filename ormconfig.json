@@ -7,10 +7,10 @@
     "database": "notes",
     "synchronize": false,
     "entities": [
-       "dist/**/entities/*.js"
+      "dist/entities/*.js"
     ],
     "migrations": [
-       "dist/**/migrations/*.js"
+       "dist/migrations/*.js"
     ],
     "subscribers": [
        "dist/**/subscribers/*.js"
