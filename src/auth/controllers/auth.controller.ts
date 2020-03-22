@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from "@nestjs/common";
+import { Controller, Post, Body, HttpException, HttpStatus } from "@nestjs/common";
 import { UsersService } from "src/user/services/users.service";
 import { JwtService } from '@nestjs/jwt';
 import { AuthDto } from '../dto/auth.dto';
@@ -18,7 +18,7 @@ export class AuthController {
         const user = await this.usersService.getByEmailAndPassword(params);
 
         if (!user) {
-            throw new Error('Неверный логин или пароль!');
+            throw new HttpException('Неверный логин или пароль!', HttpStatus.BAD_REQUEST);
         }
 
         const payload = { username: user.email, sub: user.id };

@@ -2,6 +2,9 @@ import { Controller, Post, Body } from "@nestjs/common";
 import { UsersDto } from "src/user/dto/users.dto";
 import { UsersService } from "src/user/services/users.service";
 import Add = UsersDto.Add;
+import GetByEmail = UsersDto.GetByEmail;
+import { IUsers } from 'src/user/interfaces/users.interface';
+import IModel = IUsers.IModel;
 
 @Controller('users')
 export class UsersController {
@@ -11,5 +14,10 @@ export class UsersController {
     @Post('add')
     async add(@Body() params: Add): Promise<any> {
         return await this.userService.add(params);
+    }
+
+    @Post('get-by-email')
+    async getByEmail(@Body() params: GetByEmail): Promise<IModel> {
+        return await this.userService.getByEmail(params);
     }
 }
