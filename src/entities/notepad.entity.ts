@@ -12,7 +12,7 @@ export class Notepad {
     name: string;
 
     @Column()
-    userId: number;
+    user_id: number;
 
     @Column()
     created: string;

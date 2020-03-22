@@ -6,5 +6,6 @@ export namespace IAuth {
 
     export interface ISignInResponse {
         access_token: string;
+        user_id: number;
     }
 }

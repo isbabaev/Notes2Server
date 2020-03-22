@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString, IsNumber, IsEmail } from 'class-validator';
-import { IUsers } from 'src/user/interfaces/users.interface';
-import IAddParams = IUsers.IAddParams;
-import IGetByEmailParams = IUsers.IGetByEmailParams;
+import { IUser } from 'src/user/interfaces/user.interface';
+import IAddParams = IUser.IAddParams;
+import IGetByEmailParams = IUser.IGetByEmailParams;
 
 export namespace UsersDto {
     export class Add implements IAddParams {

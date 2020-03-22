@@ -3,8 +3,8 @@ import { UsersDto } from "src/user/dto/users.dto";
 import { UsersService } from "src/user/services/users.service";
 import Add = UsersDto.Add;
 import GetByEmail = UsersDto.GetByEmail;
-import { IUsers } from 'src/user/interfaces/users.interface';
-import IModel = IUsers.IModel;
+import { IUser } from 'src/user/interfaces/user.interface';
+import IModel = IUser.IModel;
 
 @Controller('users')
 export class UsersController {

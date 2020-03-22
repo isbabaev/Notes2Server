@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from 'src/entities/user.entity';
-import { IUsers } from 'src/user/interfaces/users.interface';
-import IAddParams = IUsers.IAddParams;
-import IGetByEmailParams = IUsers.IGetByEmailParams;
-import IModel = IUsers.IModel;
-import IGetByEmailAndPasswordParams = IUsers.IGetByEmailAndPasswordParams;
+import { IUser } from 'src/user/interfaces/user.interface';
+import IAddParams = IUser.IAddParams;
+import IGetByEmailParams = IUser.IGetByEmailParams;
+import IModel = IUser.IModel;
+import IGetByEmailAndPasswordParams = IUser.IGetByEmailAndPasswordParams;
 
 @Injectable()
 export class UsersService {
