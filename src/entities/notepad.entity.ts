@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 
 @Entity({
     schema: 'public',
@@ -10,6 +10,9 @@ export class Notepad {
 
     @Column()
     name: string;
+
+    @Column()
+    userId: number;
 
     @Column()
     created: string;
