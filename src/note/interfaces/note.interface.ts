@@ -20,4 +20,8 @@ export namespace INote {
         notepad_id: number;
         created: string;
     }
+
+    export interface IGetByNotepadId {
+        id: number;
+    }
 }
