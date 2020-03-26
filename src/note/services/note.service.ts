@@ -5,6 +5,8 @@ import { Repository } from "typeorm";
 import { INote } from "../interfaces/note.interface";
 import IAddParams = INote.IAddParams;
 import IAddResponse = INote.IAddResponse;
+import IGetById = INote.IGetById;
+import IModel = INote.IModel;
 
 @Injectable()
 export class NoteService {
@@ -15,5 +17,9 @@ export class NoteService {
 
     add(params: IAddParams): Promise<IAddResponse> {
         return this.noteRepository.insert(params).then(res => res.raw[0]);
+    }
+
+    getById(params: IGetById): Promise<IModel> {
+        return this.noteRepository.findOne({id: params.id});
     }
 }
