@@ -4,6 +4,8 @@ import { NoteDto } from '../dto/note.dto';
 import Add = NoteDto.Add;
 import GetById = NoteDto.GetById;
 import GetByNotepadId = NoteDto.GetByNotepadId;
+import Update = NoteDto.Update;
+import Delete = NoteDto.Delete;
 import { INote } from '../interfaces/note.interface';
 import IAddResponse = INote.IAddResponse;
 import IModel = INote.IModel;
@@ -26,5 +28,15 @@ export class NoteController {
     @Post('get-by-notepad-id')
     getByNotepadId(@Body() params: GetByNotepadId): Promise<IModel[]> {
         return this.noteService.getByNotepadId(params);
+    }
+
+    @Post('update')
+    update(@Body() params: Update): Promise<any> {
+        return this.noteService.update(params);
+    }
+
+    @Post('delete')
+    delete(@Body() params: Delete): Promise<any> {
+        return this.noteService.delete(params);
     }
 }

@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace INotepad {
     export interface IAddParams {
         name: string;
@@ -18,5 +19,14 @@ export namespace INotepad {
         name: string;
         user_id: number;
         created: string;
+    }
+    
+    export interface IUpdateParams {
+        id: number;
+        name: string;
+    }
+
+    export interface IDeleteParams {
+        id: number;
     }
 }

@@ -7,6 +7,8 @@ import IAddParams = INotepad.IAddParams;
 import IAddResponse = INotepad.IAddResponse;
 import IModel = INotepad.IModel;
 import IGetByUserIdParams = INotepad.IGetByUserIdParams;
+import IUpdateParams = INotepad.IUpdateParams;
+import IDeleteParams = INotepad.IDeleteParams;
 
 @Injectable()
 export class NotepadsService {
@@ -16,14 +18,27 @@ export class NotepadsService {
     ) {
     }
 
-    async add(params: IAddParams): Promise<IAddResponse> {
-        return await this.notepadRepository.insert(params).then(res => res.raw[0]);
+    add(params: IAddParams): Promise<IAddResponse> {
+        return this.notepadRepository.insert(params).then(res => res.raw[0]);
     }
 
-    async getByUserId(params: IGetByUserIdParams): Promise<IModel[]> {
-        return await this.notepadRepository.find({
+    getByUserId(params: IGetByUserIdParams): Promise<IModel[]> {
+        return this.notepadRepository.find({
+            // eslint-disable-next-line @typescript-eslint/camelcase
             where: { user_id: params.user_id },
             order: { created: 'DESC' }
         });
+    }
+
+    update(params: IUpdateParams): Promise<any> {
+        return this.notepadRepository.update({
+            id: params.id
+        }, {
+            name: params.name
+        });
+    }
+
+    delete(params: IDeleteParams): Promise<any> {
+        return this.notepadRepository.delete({ id: params.id });
     }
 }

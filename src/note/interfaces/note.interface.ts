@@ -19,9 +19,20 @@ export namespace INote {
         name: string;
         notepad_id: number;
         created: string;
+        content: string;
     }
 
     export interface IGetByNotepadId {
+        id: number;
+    }
+
+    export interface IUpdateParams {
+        id: number;
+        name: string;
+        content: string;
+    }
+
+    export interface IDeleteParams {
         id: number;
     }
 }

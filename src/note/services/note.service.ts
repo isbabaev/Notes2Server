@@ -8,6 +8,8 @@ import IAddResponse = INote.IAddResponse;
 import IGetById = INote.IGetById;
 import IModel = INote.IModel;
 import IGetByNotepadId = INote.IGetByNotepadId;
+import IUpdateParams = INote.IUpdateParams;
+import IDeleteParams = INote.IDeleteParams;
 
 @Injectable()
 export class NoteService {
@@ -27,5 +29,18 @@ export class NoteService {
     getByNotepadId(params: IGetByNotepadId): Promise<IModel[]> {
         // eslint-disable-next-line @typescript-eslint/camelcase
         return this.noteRepository.find({ notepad_id: params.id });
+    }
+
+    update(params: IUpdateParams): Promise<any> {
+        return this.noteRepository.update({
+            id: params.id
+        }, {
+            name: params.name,
+            content: params.content
+        });
+    }
+
+    delete(params: IDeleteParams): Promise<any> {
+        return this.noteRepository.delete({ id: params.id });
     }
 }

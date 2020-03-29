@@ -1,8 +1,10 @@
-import { Controller, Post, Body, Get } from "@nestjs/common";
+import { Controller, Post, Body } from "@nestjs/common";
 import { NotepadsService } from "../services/notepads.service";
 import { NotepadsDto } from "src/notepad/dto/notepads.dto";
 import Add = NotepadsDto.Add;
 import GetByUserId = NotepadsDto.GetByUserId;
+import Update = NotepadsDto.Update;
+import Delete = NotepadsDto.Delete;
 import { INotepad } from '../interfaces/notepad.interface';
 import IModel = INotepad.IModel;
 
@@ -13,12 +15,22 @@ export class NotepadsController {
     }
 
     @Post('add')
-    async add(@Body() params: Add): Promise<any> {
-        return await this.notepadService.add(params);
+    add(@Body() params: Add): Promise<any> {
+        return this.notepadService.add(params);
     }
 
     @Post('get-by-user-id')
-    async getByUserId(@Body() params: GetByUserId): Promise<IModel[]> {
-        return await this.notepadService.getByUserId(params);
+    getByUserId(@Body() params: GetByUserId): Promise<IModel[]> {
+        return this.notepadService.getByUserId(params);
+    }
+
+    @Post('update')
+    update(@Body() params: Update): Promise<any> {
+        return this.notepadService.update(params);
+    }
+
+    @Post('delete')
+    delete(@Body() params: Delete): Promise<any> {
+        return this.notepadService.delete(params);
     }
 }
