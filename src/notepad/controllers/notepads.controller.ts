@@ -5,6 +5,7 @@ import Add = NotepadsDto.Add;
 import GetByUserId = NotepadsDto.GetByUserId;
 import Update = NotepadsDto.Update;
 import Delete = NotepadsDto.Delete;
+import GetById = NotepadsDto.GetById;
 import { INotepad } from '../interfaces/notepad.interface';
 import IModel = INotepad.IModel;
 
@@ -22,6 +23,11 @@ export class NotepadsController {
     @Post('get-by-user-id')
     getByUserId(@Body() params: GetByUserId): Promise<IModel[]> {
         return this.notepadService.getByUserId(params);
+    }
+
+    @Post('get-by-id')
+    getById(@Body() params: GetById): Promise<IModel> {
+        return this.notepadService.getById(params);
     }
 
     @Post('update')

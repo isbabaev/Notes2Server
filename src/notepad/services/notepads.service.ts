@@ -9,6 +9,7 @@ import IModel = INotepad.IModel;
 import IGetByUserIdParams = INotepad.IGetByUserIdParams;
 import IUpdateParams = INotepad.IUpdateParams;
 import IDeleteParams = INotepad.IDeleteParams;
+import IGetById = INotepad.IGetById;
 
 @Injectable()
 export class NotepadsService {
@@ -30,6 +31,10 @@ export class NotepadsService {
         });
     }
 
+    getById(params: IGetById): Promise<IModel> {
+        return this.notepadRepository.findOne({ id: params.id });
+    }
+
     update(params: IUpdateParams): Promise<any> {
         return this.notepadRepository.update({
             id: params.id
@@ -41,4 +46,5 @@ export class NotepadsService {
     delete(params: IDeleteParams): Promise<any> {
         return this.notepadRepository.delete({ id: params.id });
     }
+    
 }

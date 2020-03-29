@@ -29,4 +29,8 @@ export namespace INotepad {
     export interface IDeleteParams {
         id: number;
     }
+
+    export interface IGetById {
+        id: number;
+    }
 }
