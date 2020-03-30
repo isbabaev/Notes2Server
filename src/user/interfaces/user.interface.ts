@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace IUser {
     export interface IAddParams {
         email: string;
@@ -19,5 +20,9 @@ export namespace IUser {
     export interface IGetByEmailAndPasswordParams {
         email: string;
         password: string;
+    }
+
+    export interface IGetByIdParams {
+        id: number;
     }
 }

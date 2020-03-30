@@ -7,6 +7,7 @@ import IAddParams = IUser.IAddParams;
 import IGetByEmailParams = IUser.IGetByEmailParams;
 import IModel = IUser.IModel;
 import IGetByEmailAndPasswordParams = IUser.IGetByEmailAndPasswordParams;
+import IGetByIdParams = IUser.IGetByIdParams;
 
 @Injectable()
 export class UsersService {
@@ -36,5 +37,9 @@ export class UsersService {
             email: params.email,
             password: params.password
         });
+    }
+
+    async getById(params: IGetByIdParams): Promise<IModel> {
+        return await this.userRepository.findOne({ id: params.id });
     }
 }
