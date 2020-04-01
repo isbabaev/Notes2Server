@@ -25,4 +25,10 @@ export namespace IUser {
     export interface IGetByIdParams {
         id: number;
     }
+
+    export interface IChangePasswordParams {
+        id: number;
+        old_password: string;
+        new_password: string;
+    }
 }

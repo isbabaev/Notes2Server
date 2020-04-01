@@ -4,6 +4,7 @@ import { UsersService } from "src/user/services/users.service";
 import Add = UsersDto.Add;
 import GetByEmail = UsersDto.GetByEmail;
 import GetById = UsersDto.GetById;
+import ChangePassword = UsersDto.ChangePassword;
 import { IUser } from 'src/user/interfaces/user.interface';
 import IModel = IUser.IModel;
 
@@ -25,5 +26,10 @@ export class UsersController {
     @Post('get-by-id')
     async getById(@Body() params: GetById): Promise<IModel> {
         return await this.userService.getById(params);
+    }
+
+    @Post('change-password')
+    async changePassword(@Body() params: ChangePassword): Promise<any> {
+        return await this.userService.changePassword(params);
     }
 }

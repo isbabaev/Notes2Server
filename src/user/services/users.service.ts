@@ -8,6 +8,7 @@ import IGetByEmailParams = IUser.IGetByEmailParams;
 import IModel = IUser.IModel;
 import IGetByEmailAndPasswordParams = IUser.IGetByEmailAndPasswordParams;
 import IGetByIdParams = IUser.IGetByIdParams;
+import IChangePasswordParams = IUser.IChangePasswordParams;
 
 @Injectable()
 export class UsersService {
@@ -41,5 +42,17 @@ export class UsersService {
 
     async getById(params: IGetByIdParams): Promise<IModel> {
         return await this.userRepository.findOne({ id: params.id });
+    }
+
+    async changePassword(params: IChangePasswordParams): Promise<any> {
+        const user = await this.getById({id: params.id});
+
+        if(user.password === params.old_password) {
+            user.password = params.new_password;
+
+            await this.userRepository.update({id: params.id}, user);
+        } else {
+            throw new Error('Неверный пароль');
+        }
     }
 }
