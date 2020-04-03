@@ -28,7 +28,12 @@ export class NoteService {
 
     getByNotepadId(params: IGetByNotepadId): Promise<IModel[]> {
         // eslint-disable-next-line @typescript-eslint/camelcase
-        return this.noteRepository.find({ notepad_id: params.id });
+        const res = this.noteRepository.find({
+            where: { notepad_id: params.id },
+            order: { created: 'ASC'}
+        });
+
+        return res;
     }
 
     update(params: IUpdateParams): Promise<any> {
