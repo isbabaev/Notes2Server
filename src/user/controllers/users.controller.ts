@@ -14,7 +14,7 @@ export class UsersController {
     }
 
     @Post('add')
-    async add(@Body() params: Add): Promise<any> {
+    async add(@Body() params: any): Promise<any> {
         return await this.userService.add(params);
     }
 

@@ -9,6 +9,7 @@ import IModel = IUser.IModel;
 import IGetByEmailAndPasswordParams = IUser.IGetByEmailAndPasswordParams;
 import IGetByIdParams = IUser.IGetByIdParams;
 import IChangePasswordParams = IUser.IChangePasswordParams;
+import { platform } from 'os';
 
 @Injectable()
 export class UsersService {
