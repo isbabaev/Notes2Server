@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Note } from "../../entities/note.entity";
+import { Note } from "../entities/note.entity";
 import { Repository } from "typeorm";
 import { INote } from "../interfaces/note.interface";
 import IAddParams = INote.IAddParams;

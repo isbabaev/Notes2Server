@@ -1,4 +1,4 @@
-import { INotepad } from "src/notepad/interfaces/notepad.interface";
+import { INotepad } from "src/interfaces/notepad.interface";
 import { IsString, IsInt } from 'class-validator';
 import IAddParams = INotepad.IAddParams;
 import IGetByUserIdParams = INotepad.IGetByUserIdParams;

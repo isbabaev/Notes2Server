@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from 'src/entities/user.entity';
-import { IUser } from 'src/user/interfaces/user.interface';
+import { IUser } from 'src/interfaces/user.interface';
 import IAddParams = IUser.IAddParams;
 import IGetByEmailParams = IUser.IGetByEmailParams;
 import IModel = IUser.IModel;

@@ -1,5 +1,5 @@
 import { IsString, IsEmail, IsInt } from 'class-validator';
-import { IUser } from 'src/user/interfaces/user.interface';
+import { IUser } from 'src/interfaces/user.interface';
 import IAddParams = IUser.IAddParams;
 import IGetByEmailParams = IUser.IGetByEmailParams;
 import IGetByIdParams = IUser.IGetByIdParams;

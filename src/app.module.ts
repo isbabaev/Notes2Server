@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { NotepadModule } from './notepad/modules/notepad.module';
-import { UserModule } from './user/modules/user.module';
-import { AuthModule } from './auth/modules/auth.module';
-import { NoteModule } from './note/modules/note.module';
+import { NotepadModule } from './modules/notepad.module';
+import { UserModule } from './modules/user.module';
+import { AuthModule } from './modules/auth.module';
+import { NoteModule } from './modules/note.module';
 
 @Module({
   imports: [

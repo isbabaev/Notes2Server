@@ -1,4 +1,4 @@
-import { NotepadsController } from "src/notepad/controllers/notepads.controller";
+import { NotepadsController } from "src/controllers/notepads.controller";
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Notepad } from "src/entities/notepad.entity";

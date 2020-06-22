@@ -1,11 +1,11 @@
 import { Controller, Post, Body } from "@nestjs/common";
-import { UsersDto } from "src/user/dto/users.dto";
-import { UsersService } from "src/user/services/users.service";
+import { UsersDto } from "src/dto/users.dto";
+import { UsersService } from "src/services/users.service";
 import Add = UsersDto.Add;
 import GetByEmail = UsersDto.GetByEmail;
 import GetById = UsersDto.GetById;
 import ChangePassword = UsersDto.ChangePassword;
-import { IUser } from 'src/user/interfaces/user.interface';
+import { IUser } from 'src/interfaces/user.interface';
 import IModel = IUser.IModel;
 
 @Controller('users')

@@ -1,5 +1,5 @@
 import { Controller, Post, Body, HttpException, HttpStatus } from "@nestjs/common";
-import { UsersService } from "src/user/services/users.service";
+import { UsersService } from "src/services/users.service";
 import { JwtService } from '@nestjs/jwt';
 import { AuthDto } from '../dto/auth.dto';
 import SignIn = AuthDto.SignIn;
@@ -22,10 +22,8 @@ export class AuthController {
         }
 
         const payload = { username: user.email, sub: user.id };
-        // eslint-disable-next-line @typescript-eslint/camelcase
         const access_token = this.jwtService.sign(payload);
 
-        // eslint-disable-next-line @typescript-eslint/camelcase
         return { access_token, user_id: user.id };
     }
 }

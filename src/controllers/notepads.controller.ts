@@ -1,6 +1,6 @@
 import { Controller, Post, Body } from "@nestjs/common";
 import { NotepadsService } from "../services/notepads.service";
-import { NotepadsDto } from "src/notepad/dto/notepads.dto";
+import { NotepadsDto } from "src/dto/notepads.dto";
 import Add = NotepadsDto.Add;
 import GetByUserId = NotepadsDto.GetByUserId;
 import Update = NotepadsDto.Update;

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Notepad } from 'src/entities/notepad.entity';
 import { Repository } from 'typeorm';
-import { INotepad } from 'src/notepad/interfaces/notepad.interface';
+import { INotepad } from 'src/interfaces/notepad.interface';
 import IAddParams = INotepad.IAddParams;
 import IAddResponse = INotepad.IAddResponse;
 import IModel = INotepad.IModel;
